@@ -1,0 +1,14 @@
+$back1:#162128;
+$back2:#121c23;
+$colr1:#f2f2f2;
+$colD1:#67d8ae;
+$colD2:#713088;
+$colD3:#d37b3b;
+
+$fontH:24px;
+
+@mixin flex-x($x) {
+    display: flex;
+    justify-content: $x;
+    align-items: center;
+}

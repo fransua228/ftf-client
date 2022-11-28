@@ -1,0 +1,68 @@
+.form-back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.6);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+    .form {
+        padding: 20px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: $back2;
+        width:400px;
+        height:350px;
+        @include flex-x(center);
+        flex-direction: column;
+        border: 1px solid $colD1;
+        .login-head {
+            font-size: 36px;
+            padding: 5px 30px;
+            width: auto;
+            display: block;
+            background-color: $back2;
+            position: absolute;
+            height: 30px;
+            top: -20px;
+            left:15%;
+            border: 1px solid $colD1;
+            border-bottom: none;
+        }
+        span {
+            @include flex-x(flex-end);
+            font-size: 20px;
+            cursor: pointer;
+            width: 80%;
+        }
+        button {   
+            display: block;
+            width: 80%;
+            padding: 20px 40px;
+            color: $colD1;
+            border: 1px solid $colD1;
+            background-color: transparent;
+            font-size: 36px;
+            @include flex-x(center);
+            &:hover {
+                animation: colrTranspButton 6s ease infinite;
+            }
+        }
+        input {
+            width: 80%;
+            font-size: 24px;
+            padding: 5px 10px;
+            background-color: transparent;
+            border-bottom: 1px solid $colD1;
+            color:$colD1;
+            display: block;
+            margin-bottom: 20px;
+            &::placeholder {
+                color:$colD1; 
+            }
+        }
+    }
+}

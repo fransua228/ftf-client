@@ -1,0 +1,45 @@
+@keyframes colrTransp {
+    0% {
+        color:$colr1;
+        border-color:$colr1;
+    }
+    25% {
+        color:$colD1;
+        border-color:$colD1; 
+    }
+    50% {
+        color:$colD2;
+        border-color:$colD2; 
+    }
+    75% {
+        color:$colD3;
+        border-color:$colD3; 
+    }
+    100% {
+        color:$colr1;
+        border-color:$colr1;
+    }
+}
+
+@keyframes colrTranspButton {
+    0% {
+        color:$colD1;
+        border-color:$colD1;
+    }
+    25% {
+        color:$colD2;
+        border-color:$colD2; 
+    }
+    50% {
+        color:$colD3;
+        border-color:$colD3; 
+    }
+    75% {
+        color:$colD2;
+        border-color:$colD2; 
+    }
+    100% {
+        color:$colD1;
+        border-color:$colD1;
+    }
+}

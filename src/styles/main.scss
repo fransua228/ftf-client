@@ -1,0 +1,15 @@
+@import './zerostyle.css';
+@import './variables.scss';
+@import './font.scss';
+@import './iconfont.css';
+@import './animation.scss';
+body {
+    background-color: $back2;
+    color:$colr1;
+    font-family: Pixel1;
+    padding-bottom: 50px;
+}
+
+@import './header.scss';
+@import './footer.scss';
+@import './reg_log_prof.scss';
