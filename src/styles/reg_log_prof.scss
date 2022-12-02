@@ -15,7 +15,7 @@
         transform: translate(-50%,-50%);
         background-color: $back2;
         width:400px;
-        height:350px;
+        min-height:350px;
         @include flex-x(center);
         flex-direction: column;
         border: 1px solid $colD1;

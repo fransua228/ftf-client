@@ -1,0 +1,16 @@
+.swiper {
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    .swiper-wrapper {
+        width: 120%;
+        height: 100%;
+        display: flex;
+        .swiper-slide {
+            width: 80%;
+            height: 100%;
+            background-color: limegreen;
+        }
+    }
+    
+}

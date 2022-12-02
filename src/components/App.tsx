@@ -1,6 +1,7 @@
 import React,{ReactElement} from 'react'
 import {Route,Routes,BrowserRouter as Router} from 'react-router-dom'
 import '../styles/main.scss'
+import Default from './routs/Default'
 import Main from './routs/Main'
 
 export default function App():ReactElement {
@@ -8,10 +9,11 @@ export default function App():ReactElement {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Main/>}>
-            <Route path='galery'></Route>
-            <Route path='music'></Route>
-            <Route path='etc'></Route>
+          <Route path='/' element={<Default/>}>
+            <Route path='/' element={<Main/>}/>
+            <Route path='galery'/>
+            <Route path='music'/>
+            <Route path='etc'/>
           </Route>
         </Routes>
       </Router>

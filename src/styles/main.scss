@@ -8,8 +8,10 @@ body {
     color:$colr1;
     font-family: Pixel1;
     padding-bottom: 50px;
+    overflow-x: hidden;
 }
 
 @import './header.scss';
 @import './footer.scss';
 @import './reg_log_prof.scss';
+@import './news.scss';
