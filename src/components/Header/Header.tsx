@@ -1,7 +1,7 @@
 import React,{ReactElement,useContext} from 'react'
 import {NavLink} from 'react-router-dom'
 import {observer} from 'mobx-react'
-import Context from '../index'
+import Context from '../../index'
 import ButtonRegForm from './ButtonRegForm'
 export default observer(function Header():ReactElement {
     const {defaultInfo} = useContext(Context)

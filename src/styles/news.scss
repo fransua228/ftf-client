@@ -1,16 +1,43 @@
-.swiper {
-    width: 500px;
-    height: 300px;
-    background-color: #fff;
+.swiper.news {
+    width: 100%;
+    overflow: visible;
+    margin: 50px 0;
+    padding-bottom: 30px;
     .swiper-wrapper {
-        width: 120%;
-        height: 100%;
-        display: flex;
         .swiper-slide {
-            width: 80%;
-            height: 100%;
-            background-color: limegreen;
+            border:1px solid $colr1;
+            padding: 20px;
+            font-size: 24px;
+            position: relative;
+            transition: all .5s ease;
+            h2 {
+                @include flex-x(center);
+                font-size: 32px;
+                border: 1px solid $colr1;
+                border-bottom: none;
+                background-color: $back2;
+                width: 100px;
+                height: 40px;
+                position: absolute;
+                top:-20px;
+            }
+            p {
+                margin-top: 10px;
+            }
+            img {
+                margin: 10px 0;
+                width: 100%;
+            }
+            span.date {
+                @include flex-x(flex-end);
+            }
+            &.swiper-slide-next {
+                border: 1px solid $colD1;  
+                h2 {
+                    border: 1px solid $colD1;
+                    border-bottom: none;
+                }
+            }
         }
     }
-    
 }

@@ -1,7 +1,7 @@
 import React,{ReactElement,useContext} from 'react'
 import FooterLogo from './FooterLogo'
 import {observer} from 'mobx-react'
-import Context from '../index'
+import Context from '../../index'
 
 export default observer(function Header() {
     const {defaultInfo} = useContext(Context)
