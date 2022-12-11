@@ -1,7 +1,6 @@
 import React,{ReactElement} from 'react'
 import {Route,Routes,BrowserRouter as Router} from 'react-router-dom'
 import 'swiper/scss';
-import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import '../styles/main.scss'
 import Default from './routs/Default'

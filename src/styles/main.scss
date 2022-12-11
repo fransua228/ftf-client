@@ -11,7 +11,7 @@ body {
     overflow-x: hidden;
 }
 
-@import './header.scss';
-@import './footer.scss';
-@import './reg_log_prof.scss';
-@import './news.scss';
+@import '../components/Header/header.scss';
+@import '../components/Footer/footer.scss';
+@import '../components/RegAndLogin/reg_log_prof.scss';
+@import '../components/News/news.scss';

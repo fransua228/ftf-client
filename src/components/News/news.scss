@@ -2,7 +2,7 @@
     width: 100%;
     overflow: visible;
     margin: 50px 0;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     .swiper-wrapper {
         .swiper-slide {
             border:1px solid $colr1;
@@ -39,5 +39,34 @@
                 }
             }
         }
+    }
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            border-radius: 0%;
+            width:15px;
+            height: 15px;
+            background-color: transparent;
+            border: 1px solid $colr1;
+            opacity: 1;
+            position: relative;
+            &:before {
+                content:'';
+                display: block;
+                width: 60%;
+                height: 60%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background-color: $colr1;
+            }
+            &.swiper-pagination-bullet-active {
+                border: 1px solid $colD1;
+                &:before {
+                    background-color: $colD1;
+                }
+            }
+        }
+        
     }
 }

@@ -12,7 +12,7 @@ export default observer(function News():ReactElement {
     return <Swiper 
         modules={[Pagination,A11y]}
         loop
-        pagination={{ clickable: true}}
+        pagination={{ clickable: true,}}
         spaceBetween={50}
         slidesPerView={3}
         className='news'
