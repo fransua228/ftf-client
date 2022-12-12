@@ -15,3 +15,14 @@ export interface Inews{
     paragraph:string
     date:string
 }
+
+export interface IgameP {
+    head:string
+    paragraph:string
+}
+
+export interface IgameSE {
+    name:string
+    id:string
+    image:string
+}
