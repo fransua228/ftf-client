@@ -3,7 +3,7 @@ import {Swiper,SwiperSlide} from 'swiper/react'
 import { EffectCards } from "swiper";
 import {observer} from 'mobx-react'
 import Context from '../../index'
-import GamesSwiperElement from './GamesSwiperElement'
+import GamesSwiperElement from './ApplicationsSwiperElement'
 
 export default observer(function GamesSwiper() {
     const {gamesInfo} = useContext(Context)

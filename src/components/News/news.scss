@@ -7,7 +7,7 @@
         .swiper-slide {
             border:1px solid $colr1;
             padding: 20px;
-            font-size: 24px;
+            font-size: 1em;
             position: relative;
             transition: all .5s ease;
             h2 {
@@ -32,9 +32,9 @@
                 @include flex-x(flex-end);
             }
             &.swiper-slide-next {
-                border: 1px solid $colD1;  
+                @include border($colD1);  
                 h2 {
-                    border: 1px solid $colD1;
+                    border:inherit;
                     border-bottom: none;
                 }
             }
@@ -42,11 +42,11 @@
     }
     .swiper-pagination {
         .swiper-pagination-bullet {
-            border-radius: 0%;
             width:15px;
             height: 15px;
             background-color: transparent;
-            border: 1px solid $colr1;
+            @include border(white);
+            border-radius: 0%;
             opacity: 1;
             position: relative;
             &:before {
@@ -61,7 +61,7 @@
                 background-color: $colr1;
             }
             &.swiper-pagination-bullet-active {
-                border: 1px solid $colD1;
+                border-color: $colD1;
                 &:before {
                     background-color: $colD1;
                 }

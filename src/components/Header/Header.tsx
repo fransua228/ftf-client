@@ -2,7 +2,7 @@ import React,{ReactElement,useContext} from 'react'
 import {NavLink} from 'react-router-dom'
 import {observer} from 'mobx-react'
 import Context from '../../index'
-import ButtonRegForm from './ButtonRegForm'
+import HeaderButton from './HeaderButton'
 export default observer(function Header():ReactElement {
     const {defaultInfo} = useContext(Context)
     return <header>
@@ -18,7 +18,7 @@ export default observer(function Header():ReactElement {
                     <NavLink to={"/" + key} className='menu-element' key={'menu_' + key}>
                         {defaultInfo.urls[key]}
                     </NavLink>)}
-            <ButtonRegForm />
+            <HeaderButton />
         </menu>
         
     </header>

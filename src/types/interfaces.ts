@@ -19,6 +19,7 @@ export interface Inews{
 export interface IgameP {
     head:string
     paragraph:string
+    author:string
 }
 
 export interface IgameSE {

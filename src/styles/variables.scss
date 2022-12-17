@@ -12,3 +12,7 @@ $fontH:24px;
     justify-content: $x;
     align-items: center;
 }
+
+@mixin border($color) {
+    border:1px solid $color
+}

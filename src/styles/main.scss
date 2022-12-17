@@ -9,6 +9,13 @@ body {
     font-family: Pixel1;
     padding-bottom: 50px;
     overflow-x: hidden;
+    font-size: $fontH;
+    & > * {
+        width:100%;
+    }
+    .wrapper {
+        max-width:1024px;
+    }
 }
 
 @import '../components/Header/header.scss';

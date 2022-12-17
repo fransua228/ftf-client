@@ -17,7 +17,7 @@ export default function App():ReactElement {
             <Route path='music'/>
             <Route path='etc'/>
           </Route>
-        </Routes>
+        </Routes> 
       </Router>
     </>
   );

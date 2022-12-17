@@ -3,7 +3,7 @@ header {
     height: 50px;
     background-color: $back1;
     padding: 0 20px;
-    font-size: $fontH;
+    font-size: 1em;
     font-family: Pixel2;
     @include flex-x(space-between);
     $color:$colD1,$colD2,$colD3;
@@ -65,7 +65,7 @@ header {
             width:40px;
             height:40px;
             margin-left: 20px;
-            font-size: 20px;
+            font-size: 0.9em;
             color:$colr1;
             &:hover {
                 animation: colrTransp 6s ease infinite;
