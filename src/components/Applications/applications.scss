@@ -1,9 +1,10 @@
-.games {
+.applications {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    .games-paragraph {
+    .applications-paragraph {
         width: 50%;
+        order:2;
         h1 {
             font-family: 'Pixel2';
             font-size: 1.1em;
@@ -19,6 +20,7 @@
         height: 300px;
         overflow: visible;
         margin: 0;
+        order:1;
         .swiper-wrapper {
             .swiper-slide {
                 background: $back1;
@@ -36,7 +38,7 @@
                 img {
                     width: 80%;
                 }
-                a.games-url {
+                a.applications-url {
                     border: inherit;
                     width: 80%;
                     @include flex-x(center);

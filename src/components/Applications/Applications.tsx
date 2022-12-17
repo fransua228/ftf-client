@@ -1,13 +1,13 @@
 import React,{ReactElement,useContext} from 'react'
 import {observer} from 'mobx-react'
 import Context from '../../index'
-import GamesParagraph from './ApplicationsParagraph'
-import GamesSwiper from './ApplicationsSwiper'
+import ApplicationsParagraph from './ApplicationsParagraph'
+import ApplicationsSwiper from './ApplicationsSwiper'
 
-export default observer(function Games() {
+export default observer(function Applications() {
     const {defaultInfo} = useContext(Context)
-    return <div className="games wrapper">
-        <GamesParagraph head={defaultInfo.quotes[0].head} paragraph={defaultInfo.quotes[0].paragraph} author={defaultInfo.quotes[0].author}/>
-        <GamesSwiper/>
+    return <div className="applications wrapper">
+        <ApplicationsParagraph head={defaultInfo.quotes[1].head} paragraph={defaultInfo.quotes[1].paragraph} author={defaultInfo.quotes[1].author}/>
+        <ApplicationsSwiper/>
     </div>
 })

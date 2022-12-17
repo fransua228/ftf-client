@@ -3,24 +3,26 @@ import { makeAutoObservable } from "mobx"
 export default class DefaultInfo {
     gamesMini = [
         {
-            image:'http://localhost:5000/public/games/zombie_alive_logo.png',
+            image:'zombie_alive_logo.png',
             name:'Зомби живы(нет)',
             id:'1',
         },
         {
-            image:'http://localhost:5000/public/games/zombie_alive_logo.png',
-            name:'Зомби живы(нет)',
+            image:'clicker_logo.png',
+            name:'MiniClicker',
+            id:'2',
+        },
+    ]
+    appMini = [
+        {
+            image:'sberfaik_logo.png',
+            name:'Сберфейк',
             id:'1',
         },
         {
-            image:'http://localhost:5000/public/games/zombie_alive_logo.png',
-            name:'Зомби живы(нет)',
-            id:'1',
-        },
-        {
-            image:'http://localhost:5000/public/games/zombie_alive_logo.png',
-            name:'Зомби живы(нет)',
-            id:'1',
+            image:'timetable_logo.png',
+            name:'IРассписание',
+            id:'2',
         },
     ]
     constructor() {
