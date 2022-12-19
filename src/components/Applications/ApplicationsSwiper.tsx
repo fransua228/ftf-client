@@ -11,6 +11,9 @@ export default observer(function ApplicationsSwiper() {
         effect={'cards'}
         modules={[EffectCards]}
     >
-        {gamesInfo.appMini.map(game => <SwiperSlide><ApplicationsSwiperElement name={game.name} id={game.id} image={game.image}/></SwiperSlide>)}
+        {gamesInfo.appMini.map((app,index) => 
+            <SwiperSlide key={'applicationelement' + app.id + index}>
+                <ApplicationsSwiperElement name={app.name} id={app.id} image={app.image}/>
+            </SwiperSlide>)}
     </Swiper>
 })
