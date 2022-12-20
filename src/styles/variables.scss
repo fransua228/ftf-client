@@ -1,5 +1,6 @@
 $back1:#162128;
 $back2:#121c23;
+$back3:#0b1116;
 $colr1:#f2f2f2;
 $colD1:#67d8ae;
 $colD2:#713088;
@@ -14,5 +15,5 @@ $fontH:24px;
 }
 
 @mixin border($color) {
-    border:1px solid $color
+    border:1px solid $color;
 }
