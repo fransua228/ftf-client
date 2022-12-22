@@ -1,0 +1,106 @@
+$bot-width:23px;
+$bot-height:50px;
+$grass-height:16px;
+.bot-valera {
+    width: 100%;
+    padding-left: 40px;
+    background-color: $back3;
+    margin-top: 10px;
+    font-size: 1.3em;
+    @include flex-x(space-between);
+    .bot-valera-paragraph {
+        * {
+            margin-top: 30px;
+        }
+        h2 {
+            font-family: 'Pixel2';
+        }
+        button.activate-bot {
+            margin-top: 20px;
+            background-color: transparent;
+            @include border($colr1);
+            padding: 10px 20px;
+            color:$colr1;
+            font-size: 1.2em;
+            &:hover {
+                border-color: $colD1;
+                color:$colD1;
+            }
+        }
+    }  
+    .bot-valera-image {
+        height: 400px;
+        min-width:300px;
+        width:50%;
+        position: relative;
+        .grass {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: ($grass-height * 5);
+            background:url('../../../public/image/grass-left.png') no-repeat,url('../../../public/image/grass.png') repeat-x;
+            background-size:auto 100%;
+        }
+        .valera {
+            height: ($bot-height * 4);
+            width: ($bot-width * 4);
+            background:url('../../../public/image/valera-animated.png') no-repeat;
+            background-size:auto 100%;
+            position: absolute;
+            left:120%;
+            bottom:($grass-height * 5 - $grass-height - 5px);
+            transform:rotateY(180deg);
+            transition: left 5s ease;
+            animation:valera .5s steps(8) infinite;
+            &.active {
+                transform: none;
+                left:20%;
+            }
+        }
+        .dialog {
+            width: 200px;
+            padding: 5px;
+            height: 100px;
+            background-color: #96dfee;
+            border:5px solid black;
+            position: absolute;
+            left:-10%;
+            top:10%;
+            visibility: hidden;
+            cursor:pointer;
+            &.active {
+                visibility: visible;
+                transition:all 0s ease 5s;
+            }
+            &:before {
+                content:'';
+                display: block;
+                width: 7px * 5;
+                height: 7px * 5;
+                background: url('../../../public/image/dialog-bot.png');
+                position: absolute;
+                bottom:-7px * 5;
+                right:5px;
+            }
+        }
+        .stone {
+            width:10px * 3;
+            height:8px * 3;
+            background: url('../../../public/image/stone.png');
+            background-size: 100%;
+            position: absolute;
+            bottom:$grass-height*4;
+            left:20%;
+        }
+    }
+}
+
+@keyframes valera {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: (-$bot-width * 4) * 8 0;
+    }
+}

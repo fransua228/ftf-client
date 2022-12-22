@@ -24,6 +24,13 @@ export default class DefaultInfo {
             author:'FRANSUA',
         }
     ]
+    botQuotes = [
+        'Пирожок не ежик.',
+        'Если бы не Сталин, Пушкин был бы жив.',
+        'Его на стуле убили, а он живой ходит.'
+    ]
+    botVisible = false
+    switchBotVisible() {this.botVisible = !this.botVisible}
     constructor() {
         makeAutoObservable(this)
     }

@@ -5,7 +5,7 @@ import {observer} from 'mobx-react'
 import Context from '../../index'
 import GamesSwiperElement from './GamesSwiperElement'
 
-export default observer(function GamesSwiper() {
+export default observer(function GamesSwiper():ReactElement {
     const {gamesInfo} = useContext(Context)
     return <Swiper
         effect={'cards'}

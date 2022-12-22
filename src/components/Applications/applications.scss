@@ -24,7 +24,7 @@
         order:1;
         .swiper-wrapper {
             .swiper-slide {
-                background: $back1;
+                background-color: $back1;
                 @include border(white);
                 @include flex-x(center);
                 flex-direction: column;

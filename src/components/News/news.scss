@@ -5,6 +5,7 @@
     padding-bottom: 40px;
     .swiper-wrapper {
         .swiper-slide {
+            background-color: $back1;
             border:1px solid $colr1;
             padding: 20px;
             font-size: 1em;
@@ -15,7 +16,7 @@
                 font-size: 32px;
                 border: 1px solid $colr1;
                 border-bottom: none;
-                background-color: $back2;
+                background-color: inherit;
                 width: 100px;
                 height: 40px;
                 position: absolute;
