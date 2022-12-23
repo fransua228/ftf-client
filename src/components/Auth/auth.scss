@@ -14,7 +14,7 @@
         left: 50%;
         transform: translate(-50%,-50%);
         background-color: $back2;
-        width:400px;
+        max-width:400px;
         min-height:350px;
         @include flex-x(center);
         flex-direction: column;
@@ -31,6 +31,7 @@
             left:15%;
             border: 1px solid $colD1;
             border-bottom: none;
+            user-select: none;
         }
         span {
             @include flex-x(flex-end);
@@ -42,26 +43,86 @@
             display: block;
             width: 80%;
             padding: 20px 40px;
-            color: $colD1;
-            border: 1px solid $colD1;
+            color: $colr1;
+            border: 1px solid $colr1;
             background-color: transparent;
             font-size: 1.5em;
             @include flex-x(center);
             &:hover {
-                animation: colrTranspButton 6s ease infinite;
+                color:$colD1;
+                border-color: $colD1;
             }
         }
-        input {
+        .input-container {
             width: 80%;
             font-size: 1em;
-            padding: 5px 10px;
-            background-color: transparent;
-            border-bottom: 1px solid $colD1;
-            color:$colD1;
+            color:$colr1;
             display: block;
             margin-bottom: 20px;
-            &::placeholder {
-                color:$colD1; 
+            padding: 0;
+            position: relative;
+            input {
+                font-size: 1em;
+                display: block;
+                width: 100%;
+                padding: 5px 10px;
+                background-color: transparent;
+                border-bottom: 1px solid $colr1;
+                color:inherit;
+                &::placeholder {
+                    color:inherit;
+                }
+                &.valid {
+                    border-color: $colD1;
+                    color:$colD1;
+                }
+                &:focus {
+                    & ~ .error-dialog {
+                        display: block;
+                    }
+                    &.invalid {
+                        border-color: $colrErr;
+                        color:$colrErr;
+                    }
+                }
+            }
+            img.show-input {
+                position: absolute;
+                right:5px;
+                top:50%;
+                height: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+            .error-dialog {
+                position: absolute;
+                left: 110%;
+                top:50%;
+                transform: translateY(-50%);
+                width: 100%;
+                padding: 5px;
+                background-color: $back2;
+                @include border($colrErr);
+                display: none;
+                p {
+                    position: relative;
+                    z-index: 3;
+                }
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 15px;
+                    height: 15px;
+                    position: absolute;
+                    left: -14px;
+                    border-left:1px solid $colrErr;
+                    border-bottom:1px solid $colrErr;
+                    border-bottom-left-radius: 5px;
+                    top:50%;
+                    transform: rotateZ(45deg) translateY(-50%);
+                    background-color: inherit;
+                    z-index: 2;
+                }
             }
         }
     }
