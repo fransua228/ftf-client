@@ -4,7 +4,7 @@ export interface Iurls {
     etc:string
 }
 
-export interface Ifooter_logo {
+export interface Iimage {
     name:string
     url:string
 }

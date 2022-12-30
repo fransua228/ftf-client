@@ -5,6 +5,7 @@ import 'swiper/scss/pagination';
 import '../styles/main.scss'
 import Default from './routs/Default'
 import Main from './routs/Main'
+import Galery from './routs/Galery';
 
 export default function App():ReactElement {
   return (
@@ -13,7 +14,7 @@ export default function App():ReactElement {
         <Routes>
           <Route path='/' element={<Default/>}>
             <Route path='/' element={<Main/>}/>
-            <Route path='galery'/>
+            <Route path='galery' element={<Galery/>}/>
             <Route path='music'/>
             <Route path='etc'/>
           </Route>

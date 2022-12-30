@@ -1,0 +1,43 @@
+.galery {
+    @include flex-x(space-between);
+    flex-wrap: wrap;
+    padding: 20px;
+    .galery-image {
+        margin: 10px;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        @include flex-x(center);
+        img {
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+            height: auto;
+        }
+        
+        a {
+            @extend .center;
+            display: block;
+            padding: 5px 15px;
+            @include border(white);
+            color:white;
+            top:70%;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .4s ease;
+            &:hover {
+                border-color: $colD1;
+                color:$colD1;
+            }
+        }
+        &:hover {
+            a {
+                visibility: visible;
+                opacity: 1;
+                top: 50%;
+            }       
+        }
+    }
+}
