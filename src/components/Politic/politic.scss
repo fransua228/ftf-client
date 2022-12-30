@@ -1,0 +1,24 @@
+.politic-back {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.6);
+    backdrop-filter: blur(3px);
+    z-index:1000;
+    @include flex-x(center);
+    .politic {
+        background-color: $colD3;
+        max-width:800px;
+        padding: 30px;
+        height:100%;
+        font-size: 1.3em;
+        overflow-y: scroll;
+        @include scrollbar(12px,$back3,$colD3);
+        ol {
+            padding-left: 5px;
+            font-size: 0.9em;
+        }
+    }
+}

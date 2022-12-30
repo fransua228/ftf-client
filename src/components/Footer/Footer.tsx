@@ -1,5 +1,6 @@
 import React,{ReactElement,useContext} from 'react'
 import FooterLogo from './FooterLogo'
+import FooterPolitic from './FooterPolitic'
 import {observer} from 'mobx-react'
 import Context from '../../index'
 
@@ -12,5 +13,6 @@ export default observer(function Header() {
                 .map(key => 
                     <FooterLogo name={key} key={'menu_' + key} url={defaultInfo.groups[key]} />)}
         </menu>
+        <FooterPolitic />
     </footer>
 })

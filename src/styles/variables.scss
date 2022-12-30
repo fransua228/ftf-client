@@ -19,6 +19,14 @@ $fontH:24px;
     border:1px solid $color;
 }
 
+@mixin scrollbar($w,$c1,$c2) {
+    &::-webkit-scrollbar {width: $w;}
+    &::-webkit-scrollbar-track {background: $c2;}
+    &::-webkit-scrollbar-thumb {background-color: $c1;}
+    scrollbar-width: auto;
+    scrollbar-color: $c1 $c2;
+}
+
 .center {
     position: absolute;
     left: 50%;

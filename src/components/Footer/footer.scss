@@ -4,10 +4,11 @@ footer {
     background-color: $back1;
     font-size: 1em;
     font-family: Pixel2;
-    @include flex-x(space-between);
+    @include flex-x(flex-start);
     padding: 0 20px;
     margin-top: 20px;
     z-index: 10;
+    position: relative;
     menu {
         height: 90%;
         a.footer-logo {
@@ -18,5 +19,18 @@ footer {
                 width: auto;
             }
         }
+    }
+    .footer-politic {
+        @include flex-x(center);
+        @include border($colD3);
+        color:$colD3;
+        height: 90%;
+        background-color: transparent;
+        padding: 0 20px;
+        font-size: 1.1em;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform:translateY(-50%)
     }
 }
