@@ -1,0 +1,31 @@
+.music {
+    padding: 20px;
+    .music-element {
+        @include flex-x(start);
+        margin: 10px auto;
+        max-width:1024px;
+        background-color: $back1;
+        padding:10px;
+        &.active {
+            color:$colD2;
+        }
+        .music-element-activate {
+            cursor: pointer;
+        }
+        & > * {
+            width: 20%;
+            overflow: hidden;
+            &:nth-child(-n+2) {
+                width: 5%;
+            } 
+            &:nth-last-child(-n+2) {
+                display: flex;
+                justify-content: end;
+                width: 5%;
+            }
+            &:nth-last-child(2):after {
+                content: 'г.';
+            }
+        }
+    }
+}

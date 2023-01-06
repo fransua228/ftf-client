@@ -27,3 +27,25 @@ export interface IgameSE {
     id:string
     image:string
 }
+
+export interface Imusic {
+    src?:string
+    title:string
+    author:string
+    year?:string
+    album?:string
+    genre?:string
+    duration?:string
+    idx?:number
+}
+
+export interface IstateNumber {
+    value?:number
+    setValue?:any
+}
+
+export interface ImusicPlayer {
+    title:string
+    author:string
+    audio:any
+}

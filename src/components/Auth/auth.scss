@@ -8,17 +8,14 @@
     backdrop-filter: blur(3px);
     z-index: 1000;
     .form {
-        padding: 20px;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        @extend .center-relative;
+        @include flex-x(center);
+        @include border($colD1);
+        padding: 20px; 
         background-color: $back2;
         max-width:400px;
         min-height:350px;
-        @include flex-x(center);
-        flex-direction: column;
-        border: 1px solid $colD1;
+        flex-direction: column;      
         .login-head {
             font-size: 1.5em;
             padding: 5px 30px;
@@ -29,7 +26,7 @@
             height: 30px;
             top: -20px;
             left:15%;
-            border: 1px solid $colD1;
+            border: inherit;
             border-bottom: none;
             user-select: none;
         }
@@ -39,7 +36,8 @@
             cursor: pointer;
             width: 80%;
         }
-        button {   
+        button {
+            @include flex-x(center);   
             display: block;
             width: 80%;
             padding: 20px 40px;
@@ -47,7 +45,6 @@
             border: 1px solid $colr1;
             background-color: transparent;
             font-size: 1.5em;
-            @include flex-x(center);
             &:hover {
                 color:$colD1;
                 border-color: $colD1;
@@ -75,6 +72,9 @@
                 &.valid {
                     border-color: $colD1;
                     color:$colD1;
+                    & ~ i.show-input {
+                        color:$colD1;
+                    }
                 }
                 &:focus {
                     & ~ .error-dialog {
@@ -83,26 +83,25 @@
                     &.invalid {
                         border-color: $colrErr;
                         color:$colrErr;
+                        & ~ i.show-input {
+                            color:$colrErr;
+                        }
                     }
                 }
             }
-            img.show-input {
-                position: absolute;
+            i.show-input {
+                @extend .center-y;
                 right:5px;
-                top:50%;
-                height: 50%;
-                transform: translateY(-50%);
+                font-size: 0.8em;
                 cursor: pointer;
             }
             .error-dialog {
-                position: absolute;
+                @extend .center-y;
+                @include border($colrErr);
                 left: 110%;
-                top:50%;
-                transform: translateY(-50%);
                 width: 100%;
                 padding: 5px;
                 background-color: $back2;
-                @include border($colrErr);
                 display: none;
                 p {
                     position: relative;
@@ -115,8 +114,9 @@
                     height: 15px;
                     position: absolute;
                     left: -14px;
-                    border-left:1px solid $colrErr;
-                    border-bottom:1px solid $colrErr;
+                    border:inherit;
+                    border-top: none;
+                    border-right: none;
                     border-bottom-left-radius: 5px;
                     top:50%;
                     transform: rotateZ(45deg) translateY(-50%);

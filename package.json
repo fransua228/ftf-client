@@ -49,6 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@types/dompurify": "^2.4.0"
+    "@types/dompurify": "^2.4.0",
+    "@types/jsmediatags": "^3.9.3"
   }
 }

@@ -24,10 +24,10 @@
         order:1;
         .swiper-wrapper {
             .swiper-slide {
-                background-color: $back1;
                 @include border(white);
                 @include flex-x(center);
                 flex-direction: column;
+                background-color: $back1;
                 overflow:hidden;
                 position: relative;
                 * {
@@ -40,9 +40,9 @@
                     width: 80%;
                 }
                 a.applications-url {
-                    border: inherit;
-                    width: 80%;
                     @include flex-x(center);
+                    border: inherit;
+                    width: 80%;  
                     padding: 10px 0;
                     font-size: 1.2em;
                     &:hover {

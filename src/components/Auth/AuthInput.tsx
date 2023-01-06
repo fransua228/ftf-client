@@ -38,8 +38,8 @@ export default observer(function AuthInput({typeName,typeRu}:IauthIT):ReactEleme
                 onPaste={e => {if(typeName === 'password2') e.preventDefault()}}
             />
             {(typeName === 'password' || typeName === 'password2') && 
-                <img src={`./image/eye-${type}.png`} 
-                    alt='eye' className='show-input' 
+                <i 
+                    className={`show-input icon-eye-${type}`} 
                     onClick={() => setType(typeTo(type))}
                 />}
             {checkValid(value) &&

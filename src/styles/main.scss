@@ -10,6 +10,13 @@ body {
     padding-bottom: 50px;
     overflow-x: hidden;
     font-size: $fontH;
+    width: 100%;
+    #root {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding-bottom: 70px;
+    }
     & > * {
         width:100%;
     }
@@ -28,3 +35,4 @@ body {
 @import '../components/BotValera/botvalera.scss';
 @import '../components/Galery/galery.scss';
 @import '../components/Politic/politic.scss';
+@import '../components/Music/music.scss';

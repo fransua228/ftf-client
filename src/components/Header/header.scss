@@ -61,11 +61,10 @@ header {
         }
         button {
             background-color: transparent;
-            border: 2px solid $colr1;
             width:40px;
             height:40px;
             margin-left: 20px;
-            font-size: 0.9em;
+            font-size: 40px;
             color:$colr1;
             &:hover {
                 animation: colrTransp 6s ease infinite;
