@@ -1,8 +1,9 @@
 import React,{ReactElement,useEffect} from 'react'
-import { Imusic,IstateNumber } from '../../types/interfaces'
+import { Imusic,IstateNumber } from '../../functions/interfaces'
 type ImusicElement = Imusic & IstateNumber
 export default function MusicElement({title,genre,duration,album,author,year,idx,src,value,setValue}:ImusicElement):ReactElement {
     const renderArr = [title,author,album,genre,year,duration]
+
     return <div className={`music-element ${value == idx ? 'active' : 'passive'}`}>
         <div className='music-element-activate'><i className={`icon-music-play${value == idx ? 2 : 1}`} onClick={() => setValue(idx)}/></div>
         <div className='music-element-download'>

@@ -1,5 +1,136 @@
 .music {
     padding: 20px;
+    .music-player {
+        max-width: 1024px;
+        height: 100px;
+        background-color: $back1;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        img {
+            height: 100%;
+            -ms-interpolation-mode: nearest-neighbor;
+            image-rendering: pixelated;
+        }
+        .information {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 20px;
+            margin-right: 20px;
+            .title {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+        }
+        .management {
+            @include flex-x(center);
+            flex-direction: column;
+            margin-bottom: 10px;
+            .management-up {
+                @include flex-x(center);     
+                font-size: 0.9em;
+                & > * {
+                    margin-left: 5px;
+                    cursor: pointer;
+                    padding: 10px;
+                    padding-bottom: 5px;
+                    @include border($back1);
+                    transition:all .3s ease;
+                    &:hover {
+                        color:$colD2;
+                        border-color: $colD2;
+                    }
+                }
+                .prev {
+                    transform: rotateY(180deg)
+                }
+                .pause {
+                    font-size: 1.3em;
+                }
+            }
+            .management-down {
+                @include flex-x(center);
+                .music-range {
+                    width: 200px;
+                    height: 15px;
+                    margin: 0 5px;
+                    position: relative;
+                    background-color: $colr1;
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index:3;
+                        opacity: 0;
+                    }
+                    .music-range-progress {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 0%;
+                        height: 100%;
+                        background-color: $colD2;
+                    }
+                }
+            }
+        }
+        .management-last {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            padding: 10px;
+            .manage-volume {
+                @include flex-x(space-between);
+                .volume-button {
+                    padding-top: 5px;
+                }
+                .volume-range {
+                    width: 70px;
+                    height: 15px;
+                    margin-left: 10px;
+                    position: relative;
+                    background-color: $colr1;
+                    justify-self: end;
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index:3;
+                        opacity: 0;
+                    }
+                    .volume-range-progress {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 0%;
+                        height: 100%;
+                        background-color: $colD2;
+                    }
+                }
+            }
+            .manage-etc {
+                .play-auto {
+                    cursor: pointer;
+                    transition:all .3s ease;
+                    &:hover {
+                        color: $colD2;
+                    }
+                }
+            }
+
+        }
+    }
     .music-element {
         @include flex-x(start);
         margin: 10px auto;

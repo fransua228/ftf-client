@@ -1,6 +1,6 @@
 import React,{ReactElement} from 'react'
 import {SwiperSlide} from 'swiper/react'
-import {Inews} from '../../types/interfaces'
+import {Inews} from '../../functions/interfaces'
 export default function NewsElement({image,head,paragraph,date}:Inews):ReactElement {
     function setDate(d:string):string {
         let yourDate = new Date(Number(d))

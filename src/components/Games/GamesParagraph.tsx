@@ -1,5 +1,5 @@
 import React,{ReactElement} from 'react'
-import {IgameP} from '../../types/interfaces'
+import {IgameP} from '../../functions/interfaces'
 
 export default function GamesParagraph({head,paragraph,author}:IgameP) {
     return <div className="games-paragraph">

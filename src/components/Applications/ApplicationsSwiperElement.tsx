@@ -1,6 +1,6 @@
 import React,{ReactElement} from 'react'
 import { NavLink } from 'react-router-dom'
-import {IgameSE} from '../../types/interfaces'
+import {IgameSE} from '../../functions/interfaces'
 
 export default function ApplicationsParagraph({name,image,id}:IgameSE) {
     const joinUrl = (urls: Array<string | undefined>) => urls.join('/')

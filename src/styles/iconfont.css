@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./iconfonts/icomoon.eot?4u1xfi');
-  src:  url('./iconfonts/icomoon.eot?4u1xfi#iefix') format('embedded-opentype'),
-    url('./iconfonts/icomoon.ttf?4u1xfi') format('truetype'),
-    url('./iconfonts/icomoon.woff?4u1xfi') format('woff'),
-    url('./iconfonts/icomoon.svg?4u1xfi#icomoon') format('svg');
+  src:  url('./iconfonts/icomoon.eot?ra7o1l');
+  src:  url('./iconfonts/icomoon.eot?ra7o1l#iefix') format('embedded-opentype'),
+    url('./iconfonts/icomoon.ttf?ra7o1l') format('truetype'),
+    url('./iconfonts/icomoon.woff?ra7o1l') format('woff'),
+    url('./iconfonts/icomoon.svg?ra7o1l#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -23,48 +23,51 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:inherit;
+}
+
+.icon-music-volume0:before {
+  content: "\e90b";
+}
+.icon-music-volume1:before {
+  content: "\e90c";
+}
+.icon-music-volume2:before {
+  content: "\e90d";
+}
+.icon-music-volume3:before {
+  content: "\e900";
 }
 .icon-music-next:before {
   content: "\e903";
-  color: inherit;
 }
 .icon-music-pause:before {
   content: "\e904";
-  color: inherit;
 }
 .icon-music-play2:before {
   content: "\e905";
-  color: inherit;
 }
 .icon-music-play1:before {
   content: "\e906";
-  color: inherit;
 }
 .icon-eye-password:before {
   content: "\e907";
-  color: inherit;
 }
 .icon-eye-text:before {
   content: "\e908";
-  color: inherit;
 }
 .icon-music-auto1:before {
   content: "\e909";
-  color: inherit;
 }
 .icon-music-auto2:before {
   content: "\e90a";
-  color: inherit;
 }
 .icon-music-download:before {
-  content: "\e900";
-  color:inherit;
+  content: "\e910";
 }
 .icon-SpriteLogout:before {
-  content: "\e902";
-  color: inherit;
+  content: "\e901";
 }
 .icon-SpriteLogin:before {
-  content: "\e901";
-  color: inherit;
+  content: "\e902";
 }

@@ -1,11 +1,9 @@
 import { makeAutoObservable } from "mobx"
-import {Iurls} from '../types/interfaces'
 
 export default class DefaultInfo {
-    urls : Iurls = {
+    urls = {
         galery:"Галерея",
         music:'Музыка',
-        etc:'Прочее',
     }
     authors = ['Fransua','TheDarkKing','Fredere1',]
     groups = {

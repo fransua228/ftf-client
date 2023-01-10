@@ -1,8 +1,3 @@
-export interface Iurls {
-    galery:string
-    music:string
-    etc:string
-}
 
 export interface Iimage {
     name:string
@@ -44,8 +39,36 @@ export interface IstateNumber {
     setValue?:any
 }
 
+export interface IstateTime {
+    time?:number
+    setTime?:any
+}
+
+export interface IstatePlay {
+    playing?:boolean
+    setPlaying?:any
+}
+
+export interface IstateInput {
+    inputTime:number
+    setInputTime:any
+}
+
+export interface IstateVolume {
+    volume:number
+    setVolume:any
+}
+
+export interface IstateAuto {
+    auto:boolean
+    setAuto:any
+}
+
 export interface ImusicPlayer {
     title:string
     author:string
     audio:any
+    picture:string
+    time:number
+    maxTime:number 
 }

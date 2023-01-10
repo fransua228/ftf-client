@@ -27,11 +27,11 @@ header {
     }
     menu {
         height: 100%;
-        width: 50%;
+        width: 40%;
         @include flex-x(space-between);
         a.menu-element {
             height: 100%;
-            width: 33.333%;
+            width: 50%;
             position: relative;
             @include flex-x(center);
             transition: all .3s ease;
