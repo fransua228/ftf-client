@@ -1,8 +1,8 @@
 .swiper.news {
     width: 100%;
-    overflow: visible;
-    margin: 50px 0;
-    padding-bottom: 40px;
+    overflow: hidden;
+    margin: 0;
+    padding: 40px 10px;
     .swiper-wrapper {
         .swiper-slide {
             background-color: $back1;
@@ -32,11 +32,24 @@
             span.date {
                 @include flex-x(flex-end);
             }
-            &.swiper-slide-next {
-                @include border($colD1);  
+            &.swiper-slide-active {
+                @include border($colr1);
                 h2 {
                     border:inherit;
                     border-bottom: none;
+                }
+                @media screen and (max-width:1024px) {
+                    @include border($colD1);
+                }
+            }
+            &.swiper-slide-next {
+                @include border($colD1);
+                h2 {
+                    border:inherit;
+                    border-bottom: none;
+                }
+                @media screen and (max-width:1024px) {
+                    @include border($colr1); 
                 }
             }
         }
@@ -71,3 +84,4 @@
         
     }
 }
+

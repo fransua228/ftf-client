@@ -1,4 +1,4 @@
-import React,{ReactElement, useContext,useState} from 'react'
+import React,{ReactElement, useContext,useEffect,useState} from 'react'
 import {observer} from 'mobx-react'
 import Context from '../../index'
 import AuthInput from './AuthInput'
@@ -6,8 +6,10 @@ import AuthInput from './AuthInput'
 export default observer(function ButtonRegForm():ReactElement {
     const {registrationInfo} = useContext(Context)
     const [logForm,switchlogForm] = useState(true)
+
     function LoginForm() {
         return <div className="form login" onDoubleClick={e => e.stopPropagation()}>
+            <div className="close-button" onClick={() => registrationInfo.switchRegMenu()}></div>
             <span className="login-head" onClick={() => switchlogForm(!logForm)}>{logForm ? 'Вход' : 'Регистрация'}</span>
             <AuthInput typeName='email' typeRu='Почта'/>
             {!logForm && <AuthInput typeName='login' typeRu='Никнейм'/>}

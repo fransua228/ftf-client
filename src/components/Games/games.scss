@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
     .games-paragraph {
         width: 50%;
         h1 {
@@ -68,4 +68,19 @@
             }
         }
     }   
+}
+
+@media screen and (max-width:640px) {
+    .games {
+        flex-direction: column;
+        align-items: center;
+        .games-paragraph {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .swiper {
+            width: 250px;
+            height: 375px;
+        }
+    }
 }

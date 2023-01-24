@@ -21,6 +21,20 @@ export default observer(function News():ReactElement {
         keyboard={{enabled:true,onlyInViewport:true}}
         spaceBetween={50}
         slidesPerView={3}
+        breakpoints={{
+            1280 : {
+                slidesPerView:3
+            },
+            1024 : {
+                slidesPerView:2
+            },
+            640 : {
+                slidesPerView:1
+            },
+            0: {
+                slidesPerView:1
+            }
+        }}
         className='news'
     >
         {newsInfo.lastNews.map((news,index) => <SwiperSlide  key={'newselement' + news.date + index}><NewsElement image={news.image} paragraph={news.paragraph} head={news.head} date = {news.date}/></SwiperSlide>)}

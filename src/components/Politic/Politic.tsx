@@ -16,7 +16,13 @@ export default observer(function Politic():ReactElement {
 
     return <>
         {defaultInfo.politicVisible && <Background>
-            <div className='politic' onDoubleClick={e => e.stopPropagation()}>{renderHTML(clean)}</div>
+            <div className='politic' onDoubleClick={e => e.stopPropagation()}>
+                {renderHTML(clean)}
+                <div className="close-button-wrapper">
+                    <div className="close-button" onClick={() => defaultInfo.switchPoliticMenu()}></div>
+                </div>
+                
+            </div>
         </Background>}
     </>  
 })

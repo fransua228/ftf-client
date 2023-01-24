@@ -4,6 +4,7 @@ $grass-height:16px;
 .bot-valera {
     @include flex-x(space-between);
     width: 100%;
+    overflow: hidden;
     padding-left: 40px;
     background-color: $back2;
     margin-top: 10px;
@@ -29,7 +30,7 @@ $grass-height:16px;
         }
     }  
     .bot-valera-image {
-        height: 400px;
+        height: 500px;
         min-width:300px;
         width:50%;
         position: relative;
@@ -37,7 +38,7 @@ $grass-height:16px;
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 120%;
             height: ($grass-height * 5);
             background:url('../../../public/image/grass-left.png') no-repeat,url('../../../public/image/grass.png') repeat-x;
             background-size:auto 100%;
@@ -62,11 +63,10 @@ $grass-height:16px;
             font-size: 0.8em;
             width: 200px;
             padding: 5px;
-            height: 100px;
             background-color: #96dfee;
             border:5px solid black;
             position: absolute;
-            left:-10%;
+            left: 35%;
             top:10%;
             visibility: hidden;
             cursor:pointer;
@@ -83,6 +83,7 @@ $grass-height:16px;
                 position: absolute;
                 bottom:-7px * 5;
                 right:5px;
+                transform: scale(-1, 1);
             }
         }
         .stone {
@@ -103,5 +104,14 @@ $grass-height:16px;
     }
     to {
         background-position: (-$bot-width * 4) * 8 0;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .bot-valera {
+        flex-direction: column;
+        .bot-valera-image {
+            width: 80%;
+        }
     }
 }

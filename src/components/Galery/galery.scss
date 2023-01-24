@@ -1,5 +1,5 @@
 .galery {
-    @include flex-x(space-between);
+    @include flex-x(center);
     flex-wrap: wrap;
     padding: 20px;
     .galery-image {
@@ -37,6 +37,24 @@
                 opacity: 1;
                 top: 50%;
             }       
+        }
+    }
+}
+
+@media screen and (max-width:480px) {
+    .galery {
+        .galery-image {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+
+@media screen and (max-width:300px) {
+    .galery {
+        .galery-image {
+            width: 200px;
+            height: 200px;
         }
     }
 }

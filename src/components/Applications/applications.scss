@@ -70,5 +70,20 @@
             }
         }
     }
-    
+}
+
+@media screen and (max-width:640px) {
+    .applications {
+        flex-direction: column;
+        align-items: center;
+        .applications-paragraph {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .swiper {
+            width: 250px;
+            height: 375px;
+            order: 2;
+        }
+    }
 }

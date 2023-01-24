@@ -26,6 +26,10 @@
   color:inherit;
 }
 
+.icon-politic:before {
+  content: "\e90e";
+  color: inherit;
+}
 .icon-music-volume0:before {
   content: "\e90b";
 }
