@@ -1,4 +1,5 @@
 import React,{ReactElement, useContext, useState} from 'react'
+import MediaQuery from 'react-responsive'
 import {observer} from 'mobx-react'
 import Context from '../../index'
 import { ImusicPlayer,IstateAuto,IstateInput,IstateNumber, IstatePlay, IstateTime, IstateVolume } from '../../functions/interfaces'
@@ -15,6 +16,7 @@ export default function MusicPlayer({
     }:ImusicP):ReactElement {
     const {musicInfo} = useContext(Context)
     const [prevVolume,setPrevVolume] = useState(volume)
+    const [visibleManage,setVisibleManage] = useState(false)
     function getTime(t:number):string {
         let m=~~(t/60), s=~~(t % 60);
         return (m<10?"0"+m:m)+':'+(s<10?"0"+s:s);
@@ -33,11 +35,13 @@ export default function MusicPlayer({
         }
     }
     return <div className='music-player'>
+        <div className="information-main">
         <img src={`data:image/png;base64,${picture}`} alt="Mini album" />
-        <div className="information">
-            <span className='title'>{title}</span>
-            <span className='author'>{author}</span>
-        </div>
+            <div className="information">
+                <span className='title'>{title}</span>
+                <span className='author'>{author}</span>
+            </div>
+        </div>    
         <div className="management">
             <div className="management-up">
                 <div className="prev" onClick={() => toMusic(-1)}><i className="icon-music-next"></i></div>
@@ -53,7 +57,10 @@ export default function MusicPlayer({
                 <span>{getTime(maxTime)}</span>
             </div>
         </div>
-        <div className="management-last">
+        <div className={`management-last ${visibleManage ? 'active' : ''}`}>
+        <MediaQuery maxWidth={500}>
+            <div className="visible-manage" onClick={() => setVisibleManage(!visibleManage)}>{'<<'}</div>
+        </MediaQuery>
             <div className="manage-volume">
                 <div className="volume-button" onClick={() => setMuted(volume)}>
                     <i className={`icon-music-volume${getVolumeRange(volume)}`}></i>

@@ -5,23 +5,29 @@
         height: 100px;
         background-color: $back1;
         margin: 0 auto;
+        padding-right: 5px;
         display: flex;
+        justify-content: space-between;
         position: relative;
-        img {
-            height: 100%;
-            -ms-interpolation-mode: nearest-neighbor;
-            image-rendering: pixelated;
-        }
-        .information {
+        overflow: hidden;
+        .information-main {
             display: flex;
-            justify-content: center;
-            flex-direction: column;
-            height: 100%;
-            padding: 0 20px;
-            margin-right: 20px;
-            .title {
-                font-size: 1.2em;
-                font-weight: bold;
+            img {
+                height: 100%;
+                -ms-interpolation-mode: nearest-neighbor;
+                image-rendering: pixelated;
+            }
+            .information {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                height: 100%;
+                padding: 0 20px;
+                margin-right: 20px;
+                .title {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                }
             }
         }
         .management {
@@ -83,9 +89,6 @@
             justify-content: space-between;
             align-items: end;
             flex-direction: column;
-            position: absolute;
-            top: 0;
-            right: 0;
             height: 100%;
             padding: 10px;
             .manage-volume {
@@ -128,7 +131,58 @@
                     }
                 }
             }
-
+        }
+        @media screen and (max-width:720px) {
+            font-size: 0.8em;
+            height: 70px;
+            .information {
+                margin-right: 0;
+                padding: 10px;
+                span {
+                    width: 100%;
+                    text-overflow: ellipsis;
+                }
+            }
+            .management {
+                .management-down {
+                    .music-range {
+                        width: 100px;
+                        height: 10px;
+                    }
+                }
+            }
+            .management-last {
+                .manage-volume {
+                    .volume-range {
+                        width: 40px;
+                        height: 10px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width:500px) {
+            padding-right: 25px;
+            .information {
+                font-size: 0.6em;
+            }
+            .management-last {
+                position: absolute;
+                left: 100%;
+                background-color: $back2;
+                transition: transform .4s ease;
+                &.active {
+                    transform: translateX(-100%)
+                }
+                .visible-manage {
+                    @include flex-x(center);
+                    position: absolute;
+                    top: 0;
+                    left: -20px;
+                    width: 21px;
+                    height: 100%;
+                    background-color: $colD2;
+                }
+            }
         }
     }
     .music-element {
@@ -157,6 +211,20 @@
             &:nth-last-child(2):after {
                 content: 'г.';
             }
+        }
+        @media screen and (max-width:720px) {
+            font-size: 0.9em;
+            & > * {
+                &:nth-child(-n+2) {
+                    width: 7%;
+                } 
+                &:nth-last-child(-n+2) {
+                    width: 10%;
+                }
+            }
+        }
+        @media screen and (max-width:720px) {
+            font-size: 0.7em;
         }
     }
 }
