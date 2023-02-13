@@ -1,0 +1,42 @@
+.random {
+    background-color: $back1;
+    max-width: 1024px;
+    width: 100%;
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .random-box {
+        width: 600px;
+        height: 200px;
+        background-color: $back3;
+        overflow: hidden;
+        .wrapper {
+            height: 100%;
+            width: auto;
+            display: flex;
+            align-items: center;
+            .rand-elem {
+                min-width: 100px;
+                height: 100px;
+                margin-left: 25px;
+                background-color: yellowgreen;
+                @include flex-x(center);
+                font-size: 70px;
+            }
+        }
+    }
+    .random-change {
+        button {
+            color:$colD1;
+            @include border($colD1);
+            background-color: transparent;
+            font-size: 1.3em;
+            padding: 5px 20px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}

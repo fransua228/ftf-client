@@ -24,24 +24,8 @@ export interface IgameSE {
 }
 
 export interface Imusic {
-    src?:string
-    title:string
-    author:string
-    year?:string
-    album?:string
-    genre?:string
-    duration?:string
+    music:any
     idx?:number
-}
-
-export interface IstateNumber {
-    value?:number
-    setValue?:any
-}
-
-export interface IstateTime {
-    time?:number
-    setTime?:any
 }
 
 export interface IstatePlay {
@@ -49,26 +33,23 @@ export interface IstatePlay {
     setPlaying?:any
 }
 
-export interface IstateInput {
-    inputTime:number
-    setInputTime:any
+export interface IbuttonIcon {
+    classDiv:string
+    classI:string  
+    onClick?:any
+    valueClass?:string | number
 }
 
-export interface IstateVolume {
-    volume:number
-    setVolume:any
+export interface Irange {
+    classDiv:string
+    width:number
+    min:number
+    max:number
+    step:number
+    value:number
+    onChange:any
 }
 
-export interface IstateAuto {
-    auto:boolean
-    setAuto:any
-}
-
-export interface ImusicPlayer {
-    title:string
-    author:string
-    audio:any
-    picture:string
+export interface Itime {
     time:number
-    maxTime:number 
 }

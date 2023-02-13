@@ -65,6 +65,7 @@
                     position: relative;
                     background-color: $colr1;
                     input {
+                        cursor: pointer;
                         width: 100%;
                         height: 100%;
                         position: absolute;
@@ -91,12 +92,14 @@
             flex-direction: column;
             height: 100%;
             padding: 10px;
-            .manage-volume {
+            .management-volume {
                 @include flex-x(space-between);
                 .volume-button {
                     padding-top: 5px;
+                    cursor: pointer;
                 }
                 .volume-range {
+                    cursor: pointer;
                     width: 70px;
                     height: 15px;
                     margin-left: 10px;
@@ -104,6 +107,7 @@
                     background-color: $colr1;
                     justify-self: end;
                     input {
+                        cursor: pointer;
                         width: 100%;
                         height: 100%;
                         position: absolute;
@@ -122,7 +126,7 @@
                     }
                 }
             }
-            .manage-etc {
+            .management-etc {
                 .play-auto {
                     cursor: pointer;
                     transition:all .3s ease;
