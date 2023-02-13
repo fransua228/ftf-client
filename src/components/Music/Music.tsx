@@ -7,6 +7,7 @@ import MusicPlayer from './MusicPlayer'
 export default observer(function Music():ReactElement {
     const {musicInfo} = useContext(Context)
     const [playing,setPlaying] = useState(false)
+    const [audioProp,setAudioProp] = useState<HTMLAudioElement | null>(null)
     const notInitialRender = useRef(false)
     const audio = React.useRef<HTMLAudioElement>(null)
     const useMyCustom = (fn:() => void,args:Array<any>) => useEffect(()=>{notInitialRender.current ? fn() : notInitialRender.current = true},args)
@@ -29,6 +30,8 @@ export default observer(function Music():ReactElement {
             onCanPlay={() => {
                 musicInfo.setMaxTime(audio.current!.duration)
                 musicInfo.setVolume(audio.current!.volume)
+                audio.current!.crossOrigin = 'anonymous'
+                setAudioProp(audio.current)
             }}
             onTimeUpdate={() => musicInfo.setTime(audio.current!.currentTime)}
             onEnded={()=>{

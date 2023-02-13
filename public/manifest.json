@@ -1,6 +1,7 @@
 {
   "short_name": "FTF_team",
   "name": "Official cite FTF team",
+  "main":"index.html",
   "icons": [
     {
       "src": "favicon.ico",

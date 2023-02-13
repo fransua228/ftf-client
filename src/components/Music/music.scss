@@ -12,11 +12,31 @@
         overflow: hidden;
         .information-main {
             display: flex;
-            img {
+            .info-img {
                 height: 100%;
-                -ms-interpolation-mode: nearest-neighbor;
-                image-rendering: pixelated;
+                position: relative;
+                .music-vizual {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: end;
+                    .vizual-element {
+                        width: 4%;
+                        height: 30%;
+                        background-color: $colD1;
+                    }             
+                }
+                img {
+                    height: 100%;
+                    -ms-interpolation-mode: nearest-neighbor;
+                    image-rendering: pixelated;
+                }
             }
+            
             .information {
                 display: flex;
                 justify-content: center;
@@ -42,11 +62,9 @@
                     cursor: pointer;
                     padding: 10px;
                     padding-bottom: 5px;
-                    @include border($back1);
                     transition:all .3s ease;
                     &:hover {
                         color:$colD2;
-                        border-color: $colD2;
                     }
                 }
                 .prev {
@@ -97,6 +115,10 @@
                 .volume-button {
                     padding-top: 5px;
                     cursor: pointer;
+                    transition:all .3s ease;
+                    &:hover {
+                        color:$colD2;
+                    }
                 }
                 .volume-range {
                     cursor: pointer;

@@ -7,7 +7,7 @@ import Range from '../universal/Range'
 import MusicTime from './MusicTime'
 import { IstatePlay } from '../../functions/interfaces'
 
-type ImusicP = IstatePlay
+type ImusicP = IstatePlay 
 
 export default observer(function MusicPlayer({playing,setPlaying}:ImusicP):ReactElement {
     const {musicInfo} = useContext(Context)
@@ -28,10 +28,12 @@ export default observer(function MusicPlayer({playing,setPlaying}:ImusicP):React
     }
     return <div className='music-player'>
         <div className="information-main">
-            <img 
-                src={`data:image/png;base64,${musicInfo.music[musicInfo.musicNumber || 0].picture ? musicInfo.music[musicInfo.musicNumber || 0].picture : musicInfo.defaultImage}`} 
-                alt="Mini album" 
-            />
+            <div className="info-img">
+                <img 
+                    src={`data:image/png;base64,${musicInfo.music[musicInfo.musicNumber || 0].picture ? musicInfo.music[musicInfo.musicNumber || 0].picture : musicInfo.defaultImage}`} 
+                    alt="Mini album" 
+                />
+            </div>
             <div className="information">
                 <span className='title'>{musicInfo.music[musicInfo.musicNumber || 0].title}</span>
                 <span className='author'>{musicInfo.music[musicInfo.musicNumber || 0].author}</span>
