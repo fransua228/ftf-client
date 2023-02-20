@@ -1,4 +1,4 @@
-
+import React from 'react'
 export interface Iimage {
     name:string
     url:string
@@ -52,4 +52,15 @@ export interface Irange {
 
 export interface Itime {
     time:number
+}
+
+export interface Irandomizer {
+    name:string | number
+    color:string
+}
+
+export interface Iback {
+    classDiv:string
+    children:React.ReactNode
+    onDoubleClick?:any
 }

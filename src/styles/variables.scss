@@ -27,6 +27,33 @@ $fontH:24px;
     scrollbar-color: $c1 $c2;
 }
 
+@mixin sliceAngle($w,$c) {
+    &:before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left:0;
+        border:$w solid $c;
+        border-left: none;
+        border-right: none;
+    }
+    &:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 100%;
+        position: absolute;
+        top:0;
+        right:0;
+        border:$w solid $c;
+        border-left: none;
+        border-right: none;
+    }   
+}
+
 .center {
     position: absolute;
     left: 50%;

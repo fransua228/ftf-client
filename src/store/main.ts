@@ -4,6 +4,7 @@ import newsStore from './news'
 import gamesStore from './games'
 import galeryStore from './galery'
 import musicStore from './music'
+import randomizeStore from './randomize'
 
 export default {
     defaultInfo:new defaultStore(),
@@ -12,4 +13,5 @@ export default {
     gamesInfo:new gamesStore(),
     galeryInfo:new galeryStore(),
     musicInfo:new musicStore(),
+    randomInfo:new randomizeStore(),
 }

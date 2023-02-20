@@ -2,6 +2,7 @@ import React,{ReactElement, useContext,useEffect,useState} from 'react'
 import {observer} from 'mobx-react'
 import Context from '../../index'
 import AuthInput from './AuthInput'
+import Background from '../universal/Background'
 
 export default observer(function ButtonRegForm():ReactElement {
     const {registrationInfo} = useContext(Context)
@@ -24,14 +25,16 @@ export default observer(function ButtonRegForm():ReactElement {
     
         </div>
     }
-
-    function Background(props:React.ComponentProps<'div'>):ReactElement {
-        return <div className='form-back' onDoubleClick={() => registrationInfo.switchRegMenu()}>
-            {props.children}
-        </div>
-    }
     return <>
-        {registrationInfo.regMenu && (registrationInfo.registration ? <Background><ProfileForm/></Background> : <Background><LoginForm/></Background>)}
+        {registrationInfo.regMenu && 
+            (registrationInfo.registration ? 
+                <Background classDiv='form' onDoubleClick={() => registrationInfo.switchRegMenu()}>
+                    <ProfileForm/>
+                </Background> : 
+                <Background classDiv='form' onDoubleClick={() => registrationInfo.switchRegMenu()}>
+                    <LoginForm/>
+                </Background>
+            )}
     </>    
 })
 

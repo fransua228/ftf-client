@@ -1,42 +1,150 @@
 .random {
+    @include flex-x(space-between);
     background-color: $back1;
     max-width: 1024px;
     width: 100%;
-    margin: 20px auto;
+    margin: 64px auto;
     margin-bottom: 0;
     padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    position: relative;
+    h2 {
+        font-family: Pixel2;
+        position: absolute;
+        top: -19px;
+        left: 0;
+        font-size: 26px;
+    }
+    .random-result-back {
+        @include flex-x(center);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.6);
+        z-index:10000;
+        .random-result {
+            @include flex-x(center);
+            height: 100px;
+            font-size: 70px;
+            position: relative;
+            padding: 0 10px;
+            &:before {
+                content: '';
+                display: block;
+                width: 10px;
+                height: 80px;
+                background: inherit;
+                position: absolute;
+                top: 10px;
+                left: -10px;
+            }
+            &:after {
+                content: '';
+                display: block;
+                width: 10px;
+                height: 80px;
+                background: inherit;
+                position: absolute;
+                top: 10px;
+                right: -10px;
+            }
+            span {
+                transition: all .5s ease;
+                overflow: hidden;
+                &.hide {
+                    max-width:0px;
+                    animation:seekSpan 1s ease .3s 1 forwards;
+                }
+                &.space {
+                    animation:spaceSpan .3s ease .3s 1 forwards;
+                }
+            }
+            
+        }
+    }
     .random-box {
         width: 600px;
         height: 200px;
         background-color: $back3;
         overflow: hidden;
+        position: relative;
         .wrapper {
             height: 100%;
             width: auto;
             display: flex;
-            align-items: center;
+            align-items: center;    
+            transition:0s ease all;   
+            &.active {
+                margin-left: -1504%;
+                transition:9s cubic-bezier(0,1.01,.65,.99) all;     
+            }          
             .rand-elem {
+                @include sliceAngle(10px,$back3);
+                @include flex-x(center);
                 min-width: 100px;
                 height: 100px;
                 margin-left: 25px;
-                background-color: yellowgreen;
-                @include flex-x(center);
+                background-color: yellowgreen;           
                 font-size: 70px;
+                position: relative;
             }
+        }
+        &:before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 100%;
+            background-color: $back1;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index:100;
         }
     }
     .random-change {
+        text-align: center;
+        padding-top: 10px;
         button {
-            color:$colD1;
-            @include border($colD1);
+            @include border($colr1);
+            color:$colr1;    
             background-color: transparent;
             font-size: 1.3em;
             padding: 5px 20px;
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            &.active,&:hover {
+                border-color: $colD1;
+                color:$colD1;  
+            }
         }
+        .start-random {
+            font-size: 60px;
+            margin-bottom: 20px;
+            i {
+                cursor: pointer;
+                transition: all .3s ease;
+                &:hover {
+                    color:$colD1;
+                }
+            }
+        }
+    }
+}
+
+@keyframes seekSpan {
+    from {
+        max-width: 0px;
+    }
+    to {
+        max-width: 300px;
+    }
+}
+@keyframes spaceSpan {
+    from {
+        margin-left: 0px;
+    }
+    to {
+        margin-left: 10px;
     }
 }
