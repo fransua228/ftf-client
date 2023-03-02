@@ -4,12 +4,23 @@ import {observer} from 'mobx-react'
 import Context from '../../index'
 import {useDropzone} from 'react-dropzone'
 import IconButton from '../universal/IconButton'
+import Range from '../universal/Range'
+import { getVolumeRange } from '../../functions/universal'
 import melody1 from '../../audio/go-new-gambling.mp3'
 import melody2 from '../../audio/gambling.mp3'
+
 export default observer(function RandomizeChange():ReactElement {
   const {randomInfo} = useContext(Context)
-  const [play1] = useSound(melody1,{volume:.1})
-  const [play2] = useSound(melody2,{volume:.1})
+  const [volume,setVolume] = useState(.1)
+  const [prevVolume,setPrevVolume] = useState(volume)
+  const [play1] = useSound(melody1,{volume})
+  const [play2] = useSound(melody2,{volume})
+    const setMuted = () => {
+        if(volume > 0) {
+            setPrevVolume(volume)
+            setVolume(0)
+        } else setVolume(prevVolume)    
+    }
     const toArrayFormat = (arr:string):Array<string> => {
       let result =  arr.replaceAll('\r','').split('\n')
       result = [...new Set(result)].filter(elem => elem != '')
@@ -40,7 +51,6 @@ export default observer(function RandomizeChange():ReactElement {
     useEffect(()=>{if(randomInfo.resultCheck) {play2()}},[randomInfo.resultCheck])
     useEffect(()=> {
       let result = randomInfo.elemArr
-      console.log(result)
       result.map(elem =>{
         if(elem) return elem
       })
@@ -50,6 +60,16 @@ export default observer(function RandomizeChange():ReactElement {
     },[randomInfo.elemArr])
     const {getRootProps, getInputProps,isDragActive} = useDropzone({onDrop})
     return <div className="random-change">
+      <div className="random-change-volume">
+        <IconButton 
+                    classDiv='random-volume-button' 
+                    classI='icon-music-volume' 
+                    valueClass={getVolumeRange(volume)} 
+                    onClick={() => setMuted()}
+                />
+        <Range classDiv='random' width={volume} max={1} min={0} value={volume} step={0.05} onChange={(e:any)=> setVolume(e.target.value)}/>
+      </div>
+      
       <IconButton 
         classDiv='start-random' 
         classI='icon-music-play2' 

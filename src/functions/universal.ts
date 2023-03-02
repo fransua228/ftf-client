@@ -1,0 +1,1 @@
+export function getVolumeRange(value:number) {return value > 0 ? Math.min(3, Math.max(0, Math.ceil(value / 0.25))) : 0}

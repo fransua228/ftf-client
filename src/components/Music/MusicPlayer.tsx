@@ -5,6 +5,7 @@ import Context from '../../index'
 import IconButton from '../universal/IconButton'
 import Range from '../universal/Range'
 import MusicTime from './MusicTime'
+import { getVolumeRange } from '../../functions/universal'
 import { IstatePlay } from '../../functions/interfaces'
 
 type ImusicP = IstatePlay 
@@ -19,7 +20,6 @@ export default observer(function MusicPlayer({playing,setPlaying}:ImusicP):React
             if(val === -1) (musicInfo.musicNumber > 0) ? musicInfo.setMusicNumber(musicInfo.musicNumber + val) : musicInfo.setMusicNumber(musicInfo.music.length - 1)  
         }
     }
-    const getVolumeRange =(value:number) => value > 0 ? Math.min(3, Math.max(0, Math.ceil(value / 0.25))) : 0
     const setMuted = () => {
         if(musicInfo.volume > 0) {
             setPrevVolume(musicInfo.volume)

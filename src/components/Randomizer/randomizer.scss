@@ -105,6 +105,50 @@
     .random-change {
         text-align: center;
         padding-top: 10px;
+        .random-change-volume {
+            @include flex-x(center);
+            background-color: $back1;
+            position: absolute;
+            top:-30px;
+            right: 0;
+            height: 40px;
+            width: 120px;
+            padding: 0 5px;
+            .random-volume-button {
+                font-size: 20px;
+                margin-right: 5px;
+                cursor: pointer;
+                &:hover {
+                    color:$colD1;
+                }
+            }
+            .random-range {  
+                width: 70px;
+                height: 12px;
+                position: relative;
+                bottom: 3px;
+                background-color: $back3;
+                input {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index:10;
+                    opacity: 0;
+                }
+                .random-range-progress {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index:5;
+                    background-color: $colD1;
+                    height: 100%;
+                }
+            }
+        }
+        
         button {
             @include border($colr1);
             color:$colr1;    
