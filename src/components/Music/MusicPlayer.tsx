@@ -12,15 +12,15 @@ type ImusicP = IstatePlay
 
 export default observer(function MusicPlayer({playing,setPlaying}:ImusicP):ReactElement {
     const {musicInfo} = useContext(Context)
-    const [prevVolume,setPrevVolume] = useState(musicInfo.volume)
-    const [visibleManage,setVisibleManage] = useState(false)
-    function toMusic(val:number) {
+    const [prevVolume,setPrevVolume] = useState<number>(musicInfo.volume)
+    const [visibleManage,setVisibleManage] = useState<boolean>(false)
+    function toMusic(val:number):void {
         if(typeof musicInfo.musicNumber === 'number') {
             if(val === 1)  (musicInfo.musicNumber < musicInfo.music.length - 1) ? musicInfo.setMusicNumber(musicInfo.musicNumber + val) : musicInfo.setMusicNumber(0)
             if(val === -1) (musicInfo.musicNumber > 0) ? musicInfo.setMusicNumber(musicInfo.musicNumber + val) : musicInfo.setMusicNumber(musicInfo.music.length - 1)  
         }
     }
-    const setMuted = () => {
+    const setMuted = ():void => {
         if(musicInfo.volume > 0) {
             setPrevVolume(musicInfo.volume)
             musicInfo.setVolume(0)

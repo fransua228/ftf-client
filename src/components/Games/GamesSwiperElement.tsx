@@ -12,6 +12,6 @@ export default function GamesParagraph({name,image,id}:IgameSE) {
             alt={`Icon ${name}`} 
         />
         <h2>{name}</h2>
-        <NavLink to={`/games/${id}`} className='games-url'>К игре</NavLink>
+        <NavLink to={`/game/${id}`} className='games-url'>К игре</NavLink>
     </>
 }

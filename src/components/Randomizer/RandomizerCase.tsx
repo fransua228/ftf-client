@@ -5,12 +5,12 @@ import Context from '../../index'
 
 export default observer(function RandomizerCase():ReactElement {
     const {randomInfo} = useContext(Context)
-    function toTwoSimbol(index:number) {
+    const toTwoSimbol = (index:number):string => {
         let str = randomInfo.elemArr[index].trim().split(' ')
         if(str.length > 1) return (str[0][0] +  '' + str[1][0]).toUpperCase()
         return str[0][0].toUpperCase() + '' + str[0][str[0].length - 1].toLowerCase()      
     }
-    function setRandElem() {
+    const setRandElem = ():Array<React.ReactNode> =>{
         let arr = []       
         for(let i = 0;i < 80; i++) {
             let index = Math.random() * (randomInfo.elemArr.length),

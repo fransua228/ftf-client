@@ -7,6 +7,8 @@ import Default from './routs/Default'
 import Main from './routs/Main'
 import Galery from './routs/Galery';
 import Music from './routs/Music';
+import AppRout from './routs/Application';
+import NotFoundRout from './routs/NotFound';
 
 export default function App():ReactElement {
   return (
@@ -18,7 +20,10 @@ export default function App():ReactElement {
             <Route path='galery' element={<Galery/>}/>
             <Route path='music' element={<Music/>}/>
             <Route path='etc'/>
+            <Route path='app/:appId' element={<AppRout typePage='app'/>}/>
+            <Route path='game/:appId' element={<AppRout typePage='game'/>}/>
           </Route>
+          <Route path='*' element={<NotFoundRout/>}></Route>
         </Routes> 
       </Router>
     </>

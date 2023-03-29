@@ -11,11 +11,11 @@ import melody2 from '../../audio/gambling.mp3'
 
 export default observer(function RandomizeChange():ReactElement {
   const {randomInfo} = useContext(Context)
-  const [volume,setVolume] = useState(.1)
-  const [prevVolume,setPrevVolume] = useState(volume)
+  const [volume,setVolume] = useState<number>(.1)
+  const [prevVolume,setPrevVolume] = useState<number>(volume)
   const [play1] = useSound(melody1,{volume})
   const [play2] = useSound(melody2,{volume})
-    const setMuted = () => {
+    const setMuted = ():void => {
         if(volume > 0) {
             setPrevVolume(volume)
             setVolume(0)

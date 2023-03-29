@@ -64,3 +64,20 @@ export interface Iback {
     children:React.ReactNode
     onDoubleClick?:any
 }
+
+export interface IappPage {
+    appType:string
+    name:string
+    description:string
+    image:string
+}
+
+export interface IappInfo {
+    platform:Array<string>
+    genre:Array<string>
+    price:number
+    author:string
+    publisher:string
+    audithory:number
+    status:string
+}

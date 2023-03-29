@@ -17,6 +17,9 @@ body {
         width: 100%;
         min-height: 100vh;
         padding-bottom: 50px;
+        &:has(.notfound) {
+            padding-bottom: 0;
+        }
     }
     & > * {
         width:100%;
@@ -38,3 +41,5 @@ body {
 @import '../components/Politic/politic.scss';
 @import '../components/Music/music.scss';
 @import '../components/Randomizer/randomizer.scss';
+@import '../components/AppPage/apppage.scss';
+@import './notfound.scss';

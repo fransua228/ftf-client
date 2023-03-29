@@ -1,0 +1,40 @@
+.notfound {    
+    @include flex-x(center);
+    width: 100%;
+    height: 100vh; 
+    .notfound-block {
+        @include flex-x(center);
+        flex-direction: column;
+        text-align: justify;
+        span {    
+            font-size: 56px;
+            line-height: 40px;
+            &.error {
+                @include flex-x(space-between);
+                min-width: 100%;
+            }
+            &.number-error {
+                span {
+                    font-size: 256px;
+                    color:$colD2;
+                    &:first-child {color:$colD1;}
+                    &:last-child {letter-spacing: -15px;color:$colD3}
+                }      
+            }
+        }
+        .return {
+            @include flex-x(center);
+            min-width: 100%;
+            border:2px solid $colD1;
+            color:$colD1;
+            font-size: 36px;
+            padding: 5px;
+            margin-top: 10px;   
+            &:hover {
+                background-color: $colD1;
+                font-weight: bold;
+                color:$back2;
+            }
+        }
+    }      
+}

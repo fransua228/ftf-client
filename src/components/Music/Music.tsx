@@ -6,8 +6,8 @@ import MusicPlayer from './MusicPlayer'
 
 export default observer(function Music():ReactElement {
     const {musicInfo} = useContext(Context)
-    const [playing,setPlaying] = useState(false)
-    const notInitialRender = useRef(false)
+    const [playing,setPlaying] = useState<boolean>(false)
+    const notInitialRender = useRef<boolean>(false)
     const audio = React.useRef<HTMLAudioElement>(null)
     const useMyCustom = (fn:() => void,args:Array<any>) => useEffect(()=>{notInitialRender.current ? fn() : notInitialRender.current = true},args)
     
